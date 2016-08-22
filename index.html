@@ -13,15 +13,15 @@
   <link rel="stylesheet" href="css/master.css" media="screen" title="no title" charset="utf-8">
 </head>
 
-<body>
-  <div class="container section-lg">
+<body ng-app="randomQuote">
+  <div class="container section-lg" ng-controller="quoteController as qc">
     <div class="row">
       <div class="center section valign-wrapper">
         <div class="col s12 m12 l8 valign">
           <h1 blue-grey-text text-darken-3>Random Quotes</h1>
         </div>
         <div class="col s12 m12 l4 valign">
-          <a class="btn-large waves-effect waves-light red darken-2"><i class="icon ion-refresh right"></i>New Quote</a>
+          <a class="btn-large waves-effect waves-light red darken-2" ng-click="getQuote()"><i class="icon ion-refresh right"></i>New Quote</a>
         </div>
       </div>
     </div>
@@ -30,15 +30,15 @@
     <div class="container section-lg">
       <blockquote class="blue-grey-text text-darken-1">
         <h2>
-          There is no shortcut
+          {{randomQuote.quote}}
         </h2>
-        <span class="blockquote-source">Author</span>
+        <span class="blockquote-source">{{randomQuote.author}}</span>
       </blockquote>
     </div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js">
   </script>
   <script src="js/app.js">
   </script>
