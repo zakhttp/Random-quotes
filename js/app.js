@@ -21,7 +21,11 @@
     };
   });
 
-  app.controller('quoteController', function($scope, quoteService) {
+  app.controller('quoteController', function($scope, quoteService, $window) {
+    $scope.tweet = function() {
+      var tweetIntentUrl = 'https://twitter.com/intent/tweet?hashtags=quotes&text=';
+      $window.open(tweetIntentUrl + encodeURIComponent('"' + $scope.randomQuote.quote + '" ' + $scope.randomQuote.author), "_blank");
+    };
     $scope.getQuote = function() {
       var promise = quoteService.getRandomQuote();
       promise.then(function(data){
