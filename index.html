@@ -15,26 +15,25 @@
 
 <body ng-app="randomQuote">
   <div class="container section-lg" ng-controller="quoteController as qc">
-    <div class="row">
-      <div class="center section valign-wrapper">
-        <div class="col s12 m12 l8 valign">
-          <h1 blue-grey-text text-darken-3>Random Quotes</h1>
-        </div>
-        <div class="col s12 m12 l4 valign">
-          <a class="btn-large waves-effect waves-light red darken-2" ng-click="getQuote()"><i class="icon ion-refresh right"></i>New Quote</a>
-          <a class="btn-large waves-effect waves-light twitter" ng-click="tweet()"><i class="icon ion-social-twitter right" target="_blank"></i>Tweet</a>
-        </div>
-      </div>
+    <div class="section center">
+      <h1 class="blue-grey-text text-darken-3">Random Quotes</h1>
+
     </div>
     <div class="divider">
     </div>
-    <div class="container section-lg">
+    <div class="section-lg">
       <blockquote class="blue-grey-text text-darken-1">
-        <h2>
+        <h3>
           {{randomQuote.quote}}
-        </h2>
+        </h3>
         <span class="blockquote-source">{{randomQuote.author}}</span>
       </blockquote>
+    </div>
+    <div class="divider">
+    </div>
+    <div class="container section center">
+      <a class="btn-large waves-effect waves-light red darken-2" ng-click="getQuote()"><i class="icon ion-refresh right"></i>New Quote</a>
+      <a class="btn-large waves-effect waves-light twitter" ng-click="tweet()"><i class="icon ion-social-twitter right" target="_blank"></i>Tweet</a>
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
